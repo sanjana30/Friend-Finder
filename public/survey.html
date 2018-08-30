@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend Finder</title>
+    <!-- insert jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- insert bootstrap cdn -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- container starts -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Survey Questions</h1>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <!-- form starts here -->
+                <form>
+                    <div>
+                        <h3>
+                            <b>About You</b>
+                        </h3>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">
+                            <h4>Name (Required)</h4>
+                        </label>
+                        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Is it Bond?.....James Bond!">
+                    </div>
+                    <div class="form-group">
+                        <label for="imageLink">
+                            <h4>Link to Photo Image (Required)</h4>
+                        </label>
+                        <input type="url" class="form-control" id="imageLink" placeholder="Password">
+                    </div>
+                    <hr>
+                    <h3>
+                        <b>Question-1</b>
+                    </h3>
+                    <div class="form-group">
+                        <label for="q1">
+                            <h4>You are a Harry Potter fan</h4>
+                        </label>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="ans-1-1" name="radio1" class="custom-control-input" value="1">
+                            <label class="custom-control-label" for="ans-1-1">1</label>
+                            <input type="radio" id="ans-1-2" name="radio1" class="custom-control-input" value="2">
+                            <label class="custom-control-label" for="ans-1-2">2</label>
+                            <input type="radio" id="ans-1-3" name="radio1" class="custom-control-input" value="3">
+                            <label class="custom-control-label" for="ans-1-3">3</label>
+                            <input type="radio" id="ans-1-4" name="radio1" class="custom-control-input" value="4">
+                            <label class="custom-control-label" for="ans-1-4">4</label>
+                            <input type="radio" id="ans-1-5" name="radio1" class="custom-control-input" value="5">
+                            <label class="custom-control-label" for="ans-1-5">5</label>
+                        </div>
+                    </div>
+                    <h3>
+                        <b>Question-2</b>
+                    </h3>
+                    <div class="form-group">
+                        <label for="q2">
+                            <h4>Your idea of a fun friday night is go out and party.</h4>
+                        </label>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="ans-2-1" name="radio2" class="custom-control-input" value="1">
+                            <label class="custom-control-label" for="ans-2-1">1</label>
+                            <input type="radio" id="ans-2-2" name="radio2" class="custom-control-input" value="2">
+                            <label class="custom-control-label" for="ans-2-2">2</label>
+                            <input type="radio" id="ans-2-3" name="radio2" class="custom-control-input" value="3">
+                            <label class="custom-control-label" for="ans-2-3">3</label>
+                            <input type="radio" id="ans-2-4" name="radio2" class="custom-control-input" value="4">
+                            <label class="custom-control-label" for="ans-2-4">4</label>
+                            <input type="radio" id="ans-2-5" name="radio2" class="custom-control-input" value="5">
+                            <label class="custom-control-label" for="ans-2-5">5</label>
+                        </div>
+                    </div>
+                    <h3>
+                        <b>Question-3</b>
+                    </h3>
+                    <div class="form-group">
+                        <label for="q3">
+                            <h4>You prefer beaches over mountains</h4>
+                        </label>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="ans-3-1" name="radio3" class="custom-control-input" value="1">
+                            <label class="custom-control-label" for="ans-3-1">1</label>
+                            <input type="radio" id="ans-3-2" name="radio3" class="custom-control-input" value="2">
+                            <label class="custom-control-label" for="ans-3-2">2</label>
+                            <input type="radio" id="ans-3-3" name="radio3" class="custom-control-input" value="3">
+                            <label class="custom-control-label" for="ans-3-3">3</label>
+                            <input type="radio" id="ans-3-4" name="radio3" class="custom-control-input" value="4">
+                            <label class="custom-control-label" for="ans-3-4">4</label>
+                            <input type="radio" id="ans-3-5" name="radio3" class="custom-control-input" value="5">
+                            <label class="custom-control-label" for="ans-3-5">5</label>
+                        </div>
+                    </div>
+                    <h3>Question-4</h3>
+                    <div class="form-group">
+                        <label for="q4">
+                            <h4>Your mind is often buzzing with out of the box ideas</h4>
+                        </label>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="ans-4-1" name="radio4" class="custom-control-input" value="1">
+                            <label class="custom-control-label" for="ans-4-1">1</label>
+                            <input type="radio" id="ans-4-2" name="radio4" class="custom-control-input" value="2">
+                            <label class="custom-control-label" for="ans-4-2">2</label>
+                            <input type="radio" id="ans-4-3" name="radio4" class="custom-control-input" value="3">
+                            <label class="custom-control-label" for="ans-4-3">3</label>
+                            <input type="radio" id="ans-4-4" name="radio4" class="custom-control-input" value="4">
+                            <label class="custom-control-label" for="ans-4-4">4</label>
+                            <input type="radio" id="ans-4-5" name="radio4" class="custom-control-input" value="5">
+                            <label class="custom-control-label" for="ans-4-5">5</label>
+                        </div>
+                    </div>
+                    <h3>
+                        <b>Question-5</b>
+                    </h3>
+                    <div class="form-group">
+                        <label for="q5">
+                            <h4>You rarely get carried away by fantasies and ideas.</h4>
+                        </label>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="ans-5-1" name="radio5" class="custom-control-input" value="1">
+                            <label class="custom-control-label" for="ans-5-1">1</label>
+                            <input type="radio" id="ans-5-2" name="radio5" class="custom-control-input" value="2">
+                            <label class="custom-control-label" for="ans-5-2">2</label>
+                            <input type="radio" id="ans-5-3" name="radio5" class="custom-control-input" value="3">
+                            <label class="custom-control-label" for="ans-5-3">3</label>
+                            <input type="radio" id="ans-5-4" name="radio5" class="custom-control-input" value="4">
+                            <label class="custom-control-label" for="ans-5-4">4</label>
+                            <input type="radio" id="ans-5-5" name="radio5" class="custom-control-input" value="5">
+                            <label class="custom-control-label" for="ans-5-5">5</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submit" data-toggle="modal" data-target="#exampleModal">Submit</button>
+                </form>
+                <!-- form ended -->
+            </div>
+        </div>
+
+        <!-- modal -->
+        <div class="modal fade welcome-modal" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" id="modal-change" style="background: black">
+                        <h5 class="modal-title" id="exampleModalLongTitle" style="color: white">Welcome!</h5>
+                        <button type="button" class="close" data-dismiss="modal" style="color: white" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="match-display">
+                        <div id="img-div" style="text-align: center;"></div>
+                        <div><h2 id="match-name"></h2></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- modal close -->
+    </div>
+    <!-- container closed -->
+    <!-- script -->
+    <script>
+        var score = 0;
+        $(document).on("click", ".custom-control-input", function () {
+            var button = $(this);
+            score += parseInt(button.attr("value"));
+            console.log(score);
+        });
+
+        $("#submit").on("click", function (event) {
+            event.preventDefault();
+
+            var newFriend = {
+                name: $("#name").val().trim(),
+                url: $("#imageLink").val().trim(),
+                score: score
+            }
+            $.post("/friend", newFriend)
+                .then(function (data) {
+                    console.log("searching");
+                    console.log(data);
+                    for (var i = 0; i < data.length; i++) {
+                        
+                        $("#match-name").text(data[i].name);
+                        var image = $("<img>");
+                        image.attr("src", data[i].url);
+                        $("#img-div").html(image);
+                        // $("#match-display").html(listGroupItem);
+                    }   //close for
+                    $("#welcomeModal").modal({
+                        backdrop: "static"
+                    });
+                }); //close post
+        });     //close submit
+
+
+    </script>
+</body>
+
+</html>
