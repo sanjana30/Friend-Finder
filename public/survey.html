@@ -65,7 +65,7 @@
                             <label class="custom-control-label" for="ans-1-3">3</label>
                             <input type="radio" id="ans-1-4" name="radio1" class="custom-control-input" value="4">
                             <label class="custom-control-label" for="ans-1-4">4</label>
-                            <input type="radio" id="ans-1-5" name="radio1" class="custom-control-input" value="5">
+                            <input type="radio" id="ans-1-5" name="radio1" class="custom-control-input" value="5" checked>
                             <label class="custom-control-label" for="ans-1-5">5</label>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                             <label class="custom-control-label" for="ans-2-3">3</label>
                             <input type="radio" id="ans-2-4" name="radio2" class="custom-control-input" value="4">
                             <label class="custom-control-label" for="ans-2-4">4</label>
-                            <input type="radio" id="ans-2-5" name="radio2" class="custom-control-input" value="5">
+                            <input type="radio" id="ans-2-5" name="radio2" class="custom-control-input" value="5" checked>
                             <label class="custom-control-label" for="ans-2-5">5</label>
                         </div>
                     </div>
@@ -105,11 +105,13 @@
                             <label class="custom-control-label" for="ans-3-3">3</label>
                             <input type="radio" id="ans-3-4" name="radio3" class="custom-control-input" value="4">
                             <label class="custom-control-label" for="ans-3-4">4</label>
-                            <input type="radio" id="ans-3-5" name="radio3" class="custom-control-input" value="5">
+                            <input type="radio" id="ans-3-5" name="radio3" class="custom-control-input" value="5" checked>
                             <label class="custom-control-label" for="ans-3-5">5</label>
                         </div>
                     </div>
-                    <h3>Question-4</h3>
+                    <h3>
+                        <b>Question-4</b>
+                    </h3>
                     <div class="form-group">
                         <label for="q4">
                             <h4>Your mind is often buzzing with out of the box ideas</h4>
@@ -123,7 +125,7 @@
                             <label class="custom-control-label" for="ans-4-3">3</label>
                             <input type="radio" id="ans-4-4" name="radio4" class="custom-control-input" value="4">
                             <label class="custom-control-label" for="ans-4-4">4</label>
-                            <input type="radio" id="ans-4-5" name="radio4" class="custom-control-input" value="5">
+                            <input type="radio" id="ans-4-5" name="radio4" class="custom-control-input" value="5" checked>
                             <label class="custom-control-label" for="ans-4-5">5</label>
                         </div>
                     </div>
@@ -143,7 +145,7 @@
                             <label class="custom-control-label" for="ans-5-3">3</label>
                             <input type="radio" id="ans-5-4" name="radio5" class="custom-control-input" value="4">
                             <label class="custom-control-label" for="ans-5-4">4</label>
-                            <input type="radio" id="ans-5-5" name="radio5" class="custom-control-input" value="5">
+                            <input type="radio" id="ans-5-5" name="radio5" class="custom-control-input" value="5" checked>
                             <label class="custom-control-label" for="ans-5-5">5</label>
                         </div>
                     </div>
@@ -166,7 +168,9 @@
                     </div>
                     <div class="modal-body" id="match-display">
                         <div id="img-div" style="text-align: center;"></div>
-                        <div><h2 id="match-name"></h2></div>
+                        <div>
+                            <h2 id="match-name"></h2>
+                        </div>
                     </div>
 
                 </div>
@@ -177,7 +181,8 @@
     <!-- container closed -->
     <!-- script -->
     <script>
-        var score = 0;
+        var score = 25;
+
         $(document).on("click", ".custom-control-input", function () {
             var button = $(this);
             score += parseInt(button.attr("value"));
@@ -186,28 +191,35 @@
 
         $("#submit").on("click", function (event) {
             event.preventDefault();
-
-            var newFriend = {
-                name: $("#name").val().trim(),
-                url: $("#imageLink").val().trim(),
-                score: score
+            if ($("#name").val() == "" || $("imageLink").val() == 0) {
+                alert("Provide name and image link to proceed");
+                $("name").val("");
+                $("#imageLink").val("");
             }
-            $.post("/friend", newFriend)
-                .then(function (data) {
-                    console.log("searching");
-                    console.log(data);
-                    for (var i = 0; i < data.length; i++) {
-                        
-                        $("#match-name").text(data[i].name);
-                        var image = $("<img>");
-                        image.attr("src", data[i].url);
-                        $("#img-div").html(image);
-                        // $("#match-display").html(listGroupItem);
-                    }   //close for
-                    $("#welcomeModal").modal({
-                        backdrop: "static"
-                    });
-                }); //close post
+            else {
+
+                var newFriend = {
+                    name: $("#name").val().trim(),
+                    url: $("#imageLink").val().trim(),
+                    score: score
+                }
+                $.post("/friend", newFriend)
+                    .then(function (data) {
+                        console.log("searching");
+                        console.log(data);
+                        for (var i = 0; i < data.length; i++) {
+
+                            $("#match-name").text(data[i].name);
+                            var image = $("<img>");
+                            image.attr("src", data[i].url);
+                            $("#img-div").html(image);
+                            // $("#match-display").html(listGroupItem);
+                        }   //close for
+                        $("#welcomeModal").modal({
+                            backdrop: "static"
+                        });
+                    }); //close post
+            }
         });     //close submit
 
 
