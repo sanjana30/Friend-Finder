@@ -1,0 +1,13 @@
+body{
+    background-image: url("images/disney-castle.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h1{
+    color: #034373;
+}
+
+#survey-button{
+    background: #034373;
+}

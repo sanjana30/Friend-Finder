@@ -14,34 +14,56 @@
         crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
     <div class="container">
         <!-- jumbotron goes here -->
-        <div class="jumbotron">
-            <h1 class="display-4">Friend Finder</h1>
+        <div class="jumbotron" style="background: transparent">
+            <h1 class="display-4" style="color: #034373">Friend Finder</h1>
             <!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content
                 or information.
             </p> -->
             <hr class="my-4">
-            <p>Just answer a few questions to find a compatible friend!</p>
+            <!-- <p>Just answer a few questions to find a compatible friend!</p> -->
             <p class="lead">
-                <a class="btn btn-primary btn-lg" href="form" role="button">Take Survey</a>
+                <a class="btn btn-primary btn-lg" href="form" id="survey-button" role="button">Find a Friend</a>
             </p>
         </div>
         <!-- jumbotron ends -->
-        <div class="row">
-            <div class="col-md-6" id="user">
-
+        <!-- modal -->
+        <div class="modal" tabindex="-1" role="dialog" id="welcomeModal">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" style="background-image: url('images/modal-sky2.jpg')">
+                  <ul>
+                      <li>Enter your information.</li>
+                      <li>Answer a few questions.</li>
+                      <li>And find a friend!</li>
+                  </ul>
+                </div>
+               
+              </div>
             </div>
-            <div class="col-md-6" id="match">
-
-            </div>
-        </div>
+          </div>
+        <!-- modal ends -->
     </div>
     <!-- container closed -->
-    
+    <script>
+         $(document).ready(function() {
+            $("#welcomeModal").modal({
+            backdrop: "static"
+        });
+    });
+        
+    </script>
 </body>
 
 </html>
